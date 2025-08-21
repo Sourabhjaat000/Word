@@ -1,0 +1,51 @@
+/* converter-extra.css */
+
+/* Styles for the new "Convert" button */
+.cvt-btn {
+    display: block; /* Makes it a block element to center with margin */
+    margin: 1.5rem auto 0; /* Adds space above and centers it */
+    background-color: #28a745; /* A distinct success color */
+    color: var(--pure-white);
+    padding: 0.8rem 2.2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cvt-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+/* Styles for the status/error message area */
+.cvt-message {
+    margin-top: 1rem;
+    font-weight: 500;
+    min-height: 1.2em; /* Prevents layout shift when message appears */
+}
+
+.cvt-message.error {
+    color: var(--primary-red);
+}
+
+.cvt-message.success {
+    color: var(--success-green);
+}
+
+.cvt-message.progress {
+    color: var(--dark-black);
+}
+
+/* Ensure the button and text stack nicely on small screens */
+@media (max-width: 375px) {
+    .tool-placeholder {
+        padding: 2rem 1rem;
+    }
+    .upload-button, .cvt-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
