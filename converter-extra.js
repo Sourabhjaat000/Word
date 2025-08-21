@@ -1,133 +1,104 @@
-// server.js - Final Version with Correct ComPDF URLs
+import fs from 'fs';
+import fetch from 'node-fetch';
+import FormData from 'form-data';
+import https from 'https';
+import multer from 'multer';
 
-// 1. You must install these libraries on your server by running:
-//    npm install express cors multer node-fetch form-data
-const express = require('express');
-const cors = require('cors');
-const multer = require('multer');
-const fetch = require('node-fetch');
-const FormData = require('form-data');
-const fs = require('fs');
-const https = require('https');
+export const config = {
+  api: {
+    bodyParser: false, // allow multer to handle form-data
+  },
+};
 
-// 2. Server setup
-const app = express();
-app.use(cors());
-const upload = multer({ dest: 'uploads/' }); // Temporary folder for uploads
+const upload = multer({ dest: '/tmp' }); // temp folder in Vercel
 
-// 3. --- YOUR KEYS (No changes needed here) ---
-const COMPDF_PUBLIC_KEY = 'public_key_793d399f8ae7e9b8b86610e37b56cd4d';
-const COMPDF_SECRET_KEY = 'secret_key_d281df41c81ea80235ba83f6f228157a';
-
-// 4. --- ALL THE CORRECT API URLs ARE HERE (I have updated this section) ---
-const AUTH_URL = 'https://api.compdf.com/server/v1/oauth/token';
-const WORD_TO_PDF_TASK_URL = 'https://api.compdf.com/server/v1/task/word-to-pdf'; // This is the specific URL you needed
-const UPLOAD_FILE_URL = 'https://api.compdf.com/server/v1/file/upload';
-const EXECUTE_TASK_URL = 'https://api.compdf.com/server/v1/execute/start';
-const TASK_INFO_URL = 'https://api.compdf.com/server/v1/task/info';
-
-// Helper function to get the Authentication Token
-async function getAuthToken() {
-    const response = await fetch(AUTH_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ publicKey: COMPDF_PUBLIC_KEY, secretKey: COMPDF_SECRET_KEY })
+// Helper: parse upload
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) return reject(result);
+      return resolve(result);
     });
-    const data = await response.json();
-    if (data.code !== 200) throw new Error(`Failed to get auth token: ${data.msg}`);
-    return data.data.accessToken;
+  });
 }
 
-// Main /convert endpoint that your website will call
-app.post('/convert', upload.single('file'), async (req, res) => {
-    if (!req.file) {
-        return res.status(400).send('No file uploaded.');
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).send('Method Not Allowed');
+  }
+
+  await runMiddleware(req, res, upload.single('file'));
+
+  const filePath = req.file.path;
+  const AUTH_URL = 'https://api.compdf.com/server/v1/oauth/token';
+  const WORD_TO_PDF_TASK_URL = 'https://api.compdf.com/server/v1/task/word-to-pdf';
+  const UPLOAD_FILE_URL = 'https://api.compdf.com/server/v1/file/upload';
+  const EXECUTE_TASK_URL = 'https://api.compdf.com/server/v1/execute/start';
+  const TASK_INFO_URL = 'https://api.compdf.com/server/v1/task/info';
+
+  try {
+    // 1. Auth with secret key (from Vercel env)
+    const authRes = await fetch(AUTH_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ apiKey: process.env.COMPDF_SECRET_KEY }),
+    });
+    const auth = await authRes.json();
+    if (auth.code !== 200) throw new Error(auth.msg);
+    const accessToken = auth.data.accessToken;
+
+    // 2. Create task
+    const taskRes = await fetch(WORD_TO_PDF_TASK_URL, {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    const task = await taskRes.json();
+    if (task.code !== 200) throw new Error(task.msg);
+    const taskId = task.data.taskId;
+
+    // 3. Upload file
+    const formData = new FormData();
+    formData.append('file', fs.createReadStream(filePath), req.file.originalname);
+    const uploadRes = await fetch(`${UPLOAD_FILE_URL}?taskId=${taskId}`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken}` },
+      body: formData,
+    });
+    const uploaded = await uploadRes.json();
+    if (uploaded.code !== 200) throw new Error(uploaded.msg);
+
+    // 4. Execute task
+    await fetch(EXECUTE_TASK_URL, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ taskId }),
+    });
+
+    // 5. Poll until success
+    let taskInfo;
+    for (let i = 0; i < 20; i++) {
+      await new Promise(r => setTimeout(r, 1000));
+      const infoRes = await fetch(`${TASK_INFO_URL}?taskId=${taskId}`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+      taskInfo = await infoRes.json();
+      if (taskInfo.data.taskStatus === 'success') break;
+      if (taskInfo.data.taskStatus === 'failed') throw new Error('Conversion failed');
     }
 
-    const filePath = req.file.path;
+    if (taskInfo.data.taskStatus !== 'success') throw new Error('Conversion timed out');
 
-    try {
-        console.log("Step 1: Getting authentication token...");
-        const accessToken = await getAuthToken();
+    // 6. Stream result
+    https.get(taskInfo.data.downloadUrl, (fileStream) => {
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${taskInfo.data.fileName}"`);
+      fileStream.pipe(res);
+    });
 
-        console.log("Step 2: Creating Word to PDF conversion task...");
-        const createTaskResponse = await fetch(WORD_TO_PDF_TASK_URL, {
-            method: 'GET',
-            headers: { 'Authorization': `Bearer ${accessToken}` }
-        });
-        const taskData = await createTaskResponse.json();
-        if (taskData.code !== 200) throw new Error(`Failed to create task: ${taskData.msg}`);
-        const taskId = taskData.data.taskId;
-        console.log(`   > Task created with ID: ${taskId}`);
-
-        console.log("Step 3: Uploading file...");
-        const formData = new FormData();
-        formData.append('file', fs.createReadStream(filePath), req.file.originalname);
-        const uploadResponse = await fetch(`${UPLOAD_FILE_URL}?taskId=${taskId}`, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${accessToken}` },
-            body: formData
-        });
-        const uploadData = await uploadResponse.json();
-        if (uploadData.code !== 200) throw new Error(`File upload failed: ${uploadData.msg}`);
-
-        console.log("Step 4: Executing conversion task...");
-        const executeTaskResponse = await fetch(EXECUTE_TASK_URL, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ taskId })
-        });
-        const executeData = await executeTaskResponse.json();
-        if (executeData.code !== 200) throw new Error(`Task execution failed: ${executeData.msg}`);
-
-        console.log("Step 5: Checking task status...");
-        let taskInfo;
-        let attempts = 0;
-        const maxAttempts = 20; // Check for 20 seconds max
-
-        while (attempts < maxAttempts) {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
-            const taskInfoResponse = await fetch(`${TASK_INFO_URL}?taskId=${taskId}`, {
-                headers: { 'Authorization': `Bearer ${accessToken}` }
-            });
-            taskInfo = await taskInfoResponse.json();
-
-            if (taskInfo.data.taskStatus === 'success') {
-                console.log("   > Conversion successful!");
-                break;
-            }
-            if (taskInfo.data.taskStatus === 'failed') {
-                throw new Error('ComPDF reported that the conversion task failed.');
-            }
-            attempts++;
-            console.log(`   > Status is '${taskInfo.data.taskStatus}', checking again...`);
-        }
-
-        if (taskInfo.data.taskStatus !== 'success') {
-            throw new Error('Conversion task timed out.');
-        }
-
-        console.log("Step 6: Downloading converted file...");
-        const downloadUrl = taskInfo.data.downloadUrl;
-
-        // Securely stream the file directly to the user's browser
-        https.get(downloadUrl, (fileStream) => {
-            res.setHeader('Content-Type', 'application/pdf');
-            res.setHeader('Content-Disposition', `attachment; filename="${taskInfo.data.fileName}"`);
-            fileStream.pipe(res);
-        });
-
-    } catch (error) {
-        console.error('An error occurred in the conversion process:', error);
-        res.status(500).send(`Server Error: ${error.message}`);
-    } finally {
-        // Clean up the temporary file from the server
-        fs.unlinkSync(filePath);
-    }
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server for ComPDF is running on port ${PORT}`);
-});
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(`Server Error: ${err.message}`);
+  } finally {
+    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+  }
+}
