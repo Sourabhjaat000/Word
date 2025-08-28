@@ -3,629 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Word to PDF Converter | Free & Secure DOCX Conversion</title>
-    <meta name="description" content="The official online tool to convert your Word documents to high-quality PDFs for free. Fast, secure, and no registration needed. Convert DOCX to PDF in seconds.">
-    <meta name="keywords" content="word to pdf, convert docx to pdf, free pdf converter, online document conversion, word to pdf converter, change word to pdf, .docx to .pdf">
-    <link rel="canonical" href="https://convertwordtopdf.in/"> <meta property="og:title" content="Word to PDF Converter | Free & Secure DOCX Conversion">
-    <meta property="og:description" content="Easily convert your Word documents to professional PDFs online. Fast, secure, and completely free.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://convertwordtopdf.in/"> <meta property="og:image" content="https://images.unsplash.com/photo-1583521214690-73423548647a?w=1200&h=630&fit=crop">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Word to PDF Converter | Free & Secure DOCX Conversion">
-    <meta name="twitter:description" content="Easily convert your Word documents to professional PDFs online. Fast, secure, and completely free.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1583521214690-73423548647a?w=1200&h=630&fit=crop">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <title>PremiumDomain.com | Exclusive Domain Acquisition Opportunity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Variables for easy color management */
-        :root {
-            --primary-red: #D32F2F;
-            --dark-black: #1a1a1a;
-            --pure-white: #ffffff;
-            --light-gray: #f5f5f5;
-            --border-color: #e0e0e0;
-            --footer-bg: #1a1a1a;
-            --footer-text: #a0a0a0;
-            --success-green: #28a745;
-        }
-
-        /* Basic Resets and Body Styling */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--pure-white);
-            display: flex; flex-direction: column;
-            min-height: 100vh;
-        }
-        main { flex-grow: 1; }
-
-        /* --- HEADER STYLES --- */
-        .main-header {
-            background-color: var(--pure-white); width: 100%; position: sticky;
-            top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color);
-        }
-        .navbar {
-            max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo {
-            font-size: 1.6rem; font-weight: 700; color: var(--dark-black);
-            text-decoration: none; letter-spacing: -1px;
-        }
-        .logo span { color: var(--primary-red); }
-        .nav-menu { list-style: none; display: flex; align-items: center; gap: 2.5rem; }
-        .nav-item a {
-            text-decoration: none; color: var(--dark-black); font-weight: 500;
-            font-size: 1rem; padding-bottom: 8px; position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-item a:hover { color: var(--primary-red); }
-        .nav-item a::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: 0; left: 50%; transform: translateX(-50%);
-            background-color: var(--primary-red); transition: width 0.3s ease-in-out;
-        }
-        .nav-item a:hover::after { width: 100%; }
-        .contact-button {
-            background-color: var(--primary-red); color: var(--pure-white) !important;
-            padding: 0.7rem 1.6rem; border-radius: 6px; text-decoration: none;
-            font-weight: 500; transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .contact-button:hover { background-color: #B71C1C; transform: scale(1.05); }
-        .contact-button::after { display: none; }
-        .dropdown { position: relative; }
-        .dropdown-button {
-            background: none; border: none; cursor: pointer; padding: 8px;
-            border-radius: 50%; display: flex; transition: background-color 0.2s ease;
-        }
-        .dropdown-button:hover { background-color: var(--light-gray); }
-        .dropdown-button svg { width: 24px; height: 24px; fill: var(--dark-black); }
-        .dropdown-menu {
-            position: absolute; top: calc(100% + 15px); right: 0;
-            background-color: var(--pure-white); border: 1px solid var(--border-color);
-            border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            list-style: none; padding: 0.5rem 0; width: 200px;
-            opacity: 0; visibility: hidden; transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-        }
-        .dropdown-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-item a {
-            display: block; padding: 0.75rem 1.25rem; color: var(--dark-black);
-            text-decoration: none; font-size: 0.95rem;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-        .dropdown-item a:hover { background-color: var(--light-gray); color: var(--primary-red); }
-        .hamburger { display: none; cursor: pointer; }
-        .hamburger .bar {
-            display: block; width: 28px; height: 3px; margin: 5px auto;
-            background-color: var(--dark-black); border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* --- GENERAL SECTION STYLES --- */
-        .section { padding: 5rem 2rem; }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-        .section-title {
-            font-size: 2.5rem; color: var(--dark-black); text-align: center; margin-bottom: 1rem;
-        }
-        .section-subtitle {
-            font-size: 1.1rem; color: #6c757d; text-align: center;
-            max-width: 600px; margin: 0 auto 3rem auto;
-        }
-
-        /* --- SCROLL ANIMATION --- */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- TOOL SECTION --- */
-        #tool-section { padding-top: 6rem; padding-bottom: 6rem; }
-        .tool-placeholder {
-            max-width: 800px; margin: 2rem auto 0 auto; background-color: var(--pure-white);
-            border: 2px dashed var(--border-color); border-radius: 12px;
-            padding: 4rem 2rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: border-color 0.3s ease;
-        }
-        .tool-placeholder.dragover { border-color: var(--primary-red); }
-        .tool-placeholder h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .tool-placeholder p { margin-bottom: 2rem; color: #6c757d; }
-        .upload-button {
-            display: inline-block; background-color: var(--primary-red); color: var(--pure-white);
-            padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none;
-            font-weight: 500; font-size: 1.1rem; cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .upload-button:hover { background-color: #B71C1C; transform: scale(1.05); }
-        #file-input { display: none; }
-        #file-name { margin-top: 1.5rem; font-weight: 500; color: var(--success-green); }
-
-        /* --- WHY CHOOSE US / FEATURES SECTION --- */
-        #features-section { background-color: var(--light-gray); }
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem; margin-top: 3rem;
-        }
-        .feature-card {
-            background: var(--pure-white); padding: 2.5rem 2rem; text-align: center;
-            border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .feature-icon {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 64px; height: 64px; border-radius: 50%;
-            background-color: rgba(211, 47, 47, 0.1); margin-bottom: 1.5rem;
-        }
-        .feature-icon svg { width: 32px; height: 32px; stroke: var(--primary-red); }
-        .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-        .feature-card p, .feature-card ul { color: #6c757d; font-size: 0.95rem; line-height: 1.6; }
-        .feature-card ul { list-style-position: inside; text-align: left; padding-left: 0.5rem; }
-
-
-        /* --- BLOG SLIDER SECTION (COMMENTED OUT) --- */
-        /*
-        #blog-section { background-color: var(--pure-white); }
-        .blog-slider {
-            display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1.5rem;
-            scrollbar-width: thin; scrollbar-color: var(--primary-red) var(--border-color);
-        }
-        .blog-slider::-webkit-scrollbar { height: 8px; }
-        .blog-slider::-webkit-scrollbar-track { background: var(--border-color); border-radius: 10px; }
-        .blog-slider::-webkit-scrollbar-thumb { background-color: var(--primary-red); border-radius: 10px; }
-        .blog-card {
-            flex: 0 0 31%; min-width: 300px; background-color: var(--pure-white);
-            border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-            overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .blog-card-image img {
-            width: 100%; height: 200px; object-fit: cover; display: block;
-        }
-        .blog-card-content { padding: 1.5rem; }
-        .blog-card-tag {
-            display: inline-block; background-color: rgba(211, 47, 47, 0.1);
-            color: var(--primary-red); padding: 0.25rem 0.75rem;
-            border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1rem;
-        }
-        .blog-card-title { font-size: 1.25rem; color: var(--dark-black); margin-bottom: 0.75rem; }
-        .blog-card-excerpt { font-size: 0.95rem; line-height: 1.6; color: #6c757d; }
-        */
-
-        /* --- SEO CONTENT SECTION --- */
-        #seo-content-section { background-color: var(--light-gray); }
-        .seo-article {
-            max-width: 800px; margin: 0 auto; line-height: 1.8;
-            font-size: 1.1rem; color: #343a40; background: var(--pure-white);
-            padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        .seo-article h2, .seo-article h3 {
-            color: var(--dark-black); margin-top: 2rem; margin-bottom: 1rem; line-height: 1.3;
-        }
-        .seo-article h2 { font-size: 2rem; }
-        .seo-article h3 { font-size: 1.5rem; }
-        .seo-article p, .seo-article ul, .seo-article ol { margin-bottom: 1.5rem; }
-        .seo-article ul, .seo-article ol { padding-left: 1.5rem; }
-        .seo-article li { margin-bottom: 0.75rem; }
-        .seo-article a { color: var(--primary-red); text-decoration: none; font-weight: 500; }
-        .seo-article a:hover { text-decoration: underline; }
-        .seo-article strong { color: var(--dark-black); }
-
-        /* --- FAQ SECTION --- */
-        #faq-section { background-color: var(--pure-white); }
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid var(--border-color); }
-        .faq-question {
-            width: 100%; background: none; border: none; text-align: left;
-            padding: 1.5rem 0; font-size: 1.1rem; font-weight: 500; cursor: pointer;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .faq-question:hover { color: var(--primary-red); }
-        .faq-answer {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
-        }
-        .faq-answer p { padding-bottom: 1.5rem; line-height: 1.7; color: #6c757d; }
-        .faq-toggle {
-            font-size: 1.5rem; color: var(--primary-red);
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-toggle { transform: rotate(45deg); }
-        .faq-item.active .faq-answer { max-height: 300px; /* Adjust if answers are longer */ }
-
-
-        /* --- FOOTER STYLES --- */
-        .main-footer { background-color: var(--footer-bg); color: var(--footer-text); padding-top: 3rem; }
-        .footer-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem;
-        }
-        .footer-column .logo { color: var(--pure-white); margin-bottom: 1rem; display: inline-block; }
-        .footer-column p { line-height: 1.6; margin-bottom: 1rem; max-width: 350px; }
-        .footer-column h4 {
-            color: var(--pure-white); font-size: 1.1rem; margin-bottom: 1.25rem; position: relative;
-        }
-        .footer-column h4::after {
-            content: ''; position: absolute; left: 0; bottom: -5px; height: 2px;
-            width: 30px; background-color: var(--primary-red);
-        }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.6rem; }
-        .footer-links a { color: var(--footer-text); text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
-        .footer-links a:hover { color: var(--pure-white); padding-left: 5px; }
-        .social-icons { display: flex; gap: 0.75rem; }
-        .social-icons a {
-            display: inline-flex; justify-content: center; align-items: center;
-            width: 36px; height: 36px; background-color: #333;
-            border-radius: 50%; transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .social-icons a:hover { background-color: var(--primary-red); transform: translateY(-2px); }
-        .social-icons svg { width: 18px; height: 18px; fill: var(--pure-white); }
-        .footer-bottom {
-            margin-top: 2.5rem; padding: 1.25rem 0; text-align: center;
-            border-top: 1px solid #333; font-size: 0.9rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        /* --- RESPONSIVE STYLES --- */
-        @media (max-width: 992px) {
-            .navbar { padding: 1rem; }
-            .main-nav { display: none; }
-            .nav-menu {
-                position: fixed; left: -100%; top: 0; height: 100vh; flex-direction: column;
-                justify-content: center; background-color: var(--pure-white);
-                width: 70%; max-width: 300px; text-align: center;
-                transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 2rem;
-            }
-            .nav-menu.active { left: 0; }
-            .hamburger { display: block; z-index: 2; }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-            .dropdown { display: none; }
-            .section-title { font-size: 2rem; }
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
-
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e9ecef;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+            letter-spacing: 1px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .domain-name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+            margin: 25px 0;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #495057;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .timer-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .timer-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .timer-box {
+            background: #000;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            min-width: 90px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            color: #dee2e6;
+        }
+        
+        .offer-form {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .form-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ced4da;
+            background: #fff;
+            border-radius: 6px;
+            color: #495057;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        button:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 25px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature i {
+            font-size: 2.2rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .feature p {
+            color: #495057;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .urgency-note {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            margin: 15px 0;
+        }
+        
         @media (max-width: 768px) {
-            .footer-container { grid-template-columns: 1fr; text-align: center; }
-            .footer-column p { margin-left: auto; margin-right: auto; }
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .social-icons { justify-content: center; }
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .domain-name {
+                font-size: 2.2rem;
+            }
+            
+            .timer-box {
+                min-width: 70px;
+                padding: 15px;
+            }
+            
+            .timer-value {
+                font-size: 1.8rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature {
+                min-width: 100%;
+            }
         }
     </style>
-    
-    <link rel="stylesheet" href="converter-extra.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Word to PDF Converter",
-      "url": "https://convertwordtopdf.in/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://convertwordtopdf.in/",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Word to PDF Converter",
-      "operatingSystem": "Any (Web-based)",
-      "applicationCategory": "ProductivityApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      },
-      "description": "A free online tool to convert Microsoft Word documents (.docx) to Portable Document Format (.pdf) securely and quickly.",
-      "url": "https://convertwordtopdf.in/"
-    }
-    </script>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="navbar">
-            <a href="#" class="logo">Word to <span>PDF</span></a>
-            <ul class="nav-menu">
-                <li class="nav-item main-nav"><a href="#tool-section">Converter</a></li>
-                <li class="nav-item main-nav"><a href="#features-section">Features</a></li>
-                <li class="nav-item main-nav"><a href="#faq-section">FAQ</a></li>
-                <li class="nav-item"><a href="#contact" class="contact-button">Contact</a></li>
-                <li class="nav-item dropdown">
-                    <button class="dropdown-button" aria-label="More options">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"/></svg>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="#">Privacy Policy</a></li>
-                        <li class="dropdown-item"><a href="#">Terms & Conditions</a></li>
-                        <li class="dropdown-item"><a href="#">FAQ</a></li>
-                        <li class="dropdown-item"><a href="#about-us.html">About Us</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="tool-section" class="section">
-            <div class="section-container">
-                <h1 class="section-title">The Official Word to PDF Converter</h1>
-                <p class="section-subtitle">The fastest and easiest way to convert your DOCX files into high-quality, professional PDFs. Secure, free, and no registration required.</p>
-                <div class="tool-placeholder fade-in">
-                    <form>
-                        <h3>Drag & Drop Your File Here</h3>
-                        <p>or</p>
-                        <label for="file-input" class="upload-button">Select File</label>
-                        <input type="file" id="file-input" accept=".doc,.docx,.pdf">
-                        <p id="file-name"></p>
-                        <button id="convertBtn" type="button" class="cvt-btn">Convert</button>
-                        <p id="message-area" class="cvt-message"></p>
-                    </form>
+    <div class="container">
+        <header>
+            <div class="logo">PREMIUM DOMAINS</div>
+            <h1>Exclusive Domain Acquisition Opportunity</h1>
+            <div class="domain-name">These domain is for sale interested salers submit your interest</div>
+            <p class="description">
+                This premium domain is currently available for acquisition. A perfect digital asset for innovative companies, 
+                tech startups, and forward-thinking organizations. Secure this valuable brand asset to elevate your online presence.
+            </p>
+        </header>
+        
+        <div class="timer-container">
+            <h2 class="timer-title">Limited Time Offering - Act Now!</h2>
+            <div class="timer">
+                <div class="timer-box">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Seconds</div>
                 </div>
             </div>
-        </section>
-
-        <section id="features-section" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Features</h2>
-                <p class="section-subtitle">Discover the key benefits of our online converter.</p>
-                <div class="features-grid">
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
-                        </div>
-                        <h3>Powerful Features</h3>
-                        <p>Our tool ensures high-quality PDF output, perfectly preserving the original formatting, fonts, and images from your Word document.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
-                        </div>
-                        <h3>How It Works</h3>
-                        <p>A simple 3-step process: 1. Select or drag & drop your DOCX file. 2. Click "Convert". 3. Download your professional PDF instantly.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3>Pricing / Limits</h3>
-                        <p>This service is completely free. There are no watermarks, registration requirements, or limits on the number of conversions.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                         <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
-                        </div>
-                        <h3>Why Choose Us?</h3>
-                        <ul>
-                            <li><b>Secure:</b> Files are SSL encrypted and deleted after 1 hour.</li>
-                            <li><b>Fast:</b> Powerful servers convert files in seconds.</li>
-                            <li><b>Cross-Platform:</b> Works on any device or OS.</li>
-                            <li><b>No Software:</b> Fully online, nothing to install.</li>
-                        </ul>
-                    </div>
-                </div>
+            <p class="urgency-note">This domain will be released to the public if not acquired by the expiration of this timer</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-medal"></i>
+                <h3>Premium Quality</h3>
+                <p>Short, memorable, and brandable domain name with high commercial value</p>
             </div>
-        </section>
-
-        <section id="seo-content-section" class="section">
-            <div class="section-container">
-                <article class="seo-article fade-in">
-                    <h2>The Ultimate Guide to Converting Word Documents to PDF</h2>
-                    <p>In today's digital landscape, the need to <strong>convert Word to PDF</strong> is more common than ever. Whether you're a student submitting an assignment, a professional sending a resume, or a business sharing a report, the PDF format ensures your document looks the same for every viewer, on any device. This guide covers everything you need to know about the process, from the best free online converters to why PDF is the superior format for sharing.</p>
-                    
-                    <h3>Why Should You Convert a DOCX File to PDF?</h3>
-                    <p>The primary reason for converting documents is <strong>universal compatibility</strong>. A Microsoft Word file can look different depending on the version of Word, the operating system, or the available fonts. A PDF, however, is a snapshot of your document, preserving the layout perfectly.</p>
-                    <ul>
-                        <li><strong>Security:</strong> PDFs can be encrypted, password-protected, and made read-only to prevent unauthorized changes.</li>
-                        <li><strong>Professionalism:</strong> It is the global standard for business contracts, academic papers, and official reports.</li>
-                        <li><strong>File Size:</strong> PDFs are often smaller than the original Word file, making them easier to email and faster to download.</li>
-                        <li><strong>Reliability:</strong> Your document's fonts, images, and formatting are locked in place, guaranteeing it looks exactly as you intended.</li>
-                    </ul>
-
-                    <h3>How to Use Our Free Word to PDF Converter</h3>
-                    <p>We designed our tool to be incredibly simple. Here's how to <strong>change Word to PDF</strong> in just three easy steps:</p>
-                    <ol>
-                        <li><strong>Select Your File:</strong> Click the "Select File" button or simply drag and drop your .DOCX or .DOC file into the upload area.</li>
-                        <li><strong>Automatic Conversion:</strong> Our system will instantly begin the conversion process. There are no complicated settings to configure.</li>
-                        <li><strong>Download Your PDF:</strong> Within seconds, your new, high-quality PDF will be ready for download.</li>
-                    </ol>
-
-                    <h3>Choosing the Best Free Word to PDF Converter</h3>
-                    <p>When searching for a "free word to pdf converter online," you'll find countless options. The key is to choose a tool that is not only free but also secure and high-quality. Our tool at <a href="https://convertwordtopdf.in/">convertwordtopdf.in</a> uses advanced technology to ensure your file conversion is flawless while protecting your privacy by deleting your files from our servers after a short period. This is a critical step for anyone looking for the <strong>best way to change word to pdf</strong> without compromising security.</p>
-                    <p>Ultimately, our mission is to provide a reliable, free, and secure service for everyone. No sign-ups, no watermarks, just a simple solution to a common problem.</p>
-                </article>
+            <div class="feature">
+                <i class="fas fa-search"></i>
+                <h3>SEO Advantage</h3>
+                <p>Inherent search engine optimization benefits from a keyword-rich domain</p>
             </div>
-        </section>
-
-        <section id="faq-section" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Have questions? We have answers. Here are some of the most common queries we receive.</p>
-                <div class="faq-container fade-in">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Is this Word to PDF converter really free?</span>
-                            <span class="faq-toggle">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes, absolutely. Our tool is 100% free to use with no hidden costs, watermarks, or registration requirements. You can convert as many files as you need.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Are my uploaded files secure?</span>
-                            <span class="faq-toggle">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Security is our top priority. We use 256-bit SSL encryption for all file transfers, and we automatically delete all uploaded files from our servers after one hour. We never access or share your files.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Will the converted PDF maintain my original formatting?</span>
-                            <span class="faq-toggle">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes. Our conversion technology is designed to perfectly preserve the original layout, fonts, images, and formatting of your Word document in the final PDF file.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Can I convert files from my mobile device?</span>
-                            <span class="faq-toggle">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Of course. Our website is fully responsive and works on any device, including smartphones and tablets. You can convert documents on the go from any operating system (iOS, Android, etc.).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <a href="#" class="logo">Word to <span>PDF</span></a>
-                <p>Simple, secure, and professional document conversion. Your go-to tool for high-quality PDF files.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/dhoni.jaat.33" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5.52 4.5 10.02 10 10.02s10-4.5 10-10.02C22 6.53 17.5 2.04 12 2.04zM13.6 19.95V13.6h2.1l.3-2.4h-2.4v-1.5c0-.7.2-1.2 1.2-1.2h1.3V6.2c-.2 0-.9-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8H9.9v2.4h2.1v6.35c-2.4-.6-4.2-2.8-4.2-5.55 0-3.1 2.5-5.6 5.6-5.6s5.6 2.5 5.6 5.6c0 2.75-1.8 5-4.2 5.55z"/></svg></a>
-                    <a href="https://youtube.com/@mcbustor?si=AFVLluXUrj7zQDwg" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.73,18.78 17.93,18.84C17.13,18.91 16.44,18.94 15.84,18.94L15,19C12.81,19 11.2,18.84 10.17,18.56C9.27,18.31 8.69,17.73 8.44,16.83C8.31,16.36 8.22,15.73 8.16,14.93C8.09,14.13 8.06,13.44 8.06,12.84L8,12C8,9.81 8.16,8.2 8.44,7.17C8.69,6.27 9.27,5.69 10.17,5.44C10.64,5.31 11.27,5.22 12.07,5.16C12.87,5.09 13.56,5.06 14.16,5.06L15,5C17.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg></a>
-                    <a href="https://www.instagram.com/sour.abhchahar?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#tool-section">Converter</a></li>
-                    <li><a href="#features-section">Features</a></li>
-                    <li><a href="#faq-section">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Disclaimer</a></li>
-                </ul>
+            <div class="feature">
+                <i class="fas fa-globe"></i>
+                <h3>Global Appeal</h3>
+                <p>Works for any business worldwide with instant recognition and recall</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 convertwordtopdf.in. All Rights Reserved.</p>
+        
+        <div class="offer-form">
+            <h2 class="form-title">Submit Your Offer</h2>
+            <form id="domainOfferForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="offer">Offer Amount (USD)</label>
+                    <input type="number" id="offer" placeholder="Enter your offer amount" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" placeholder="Tell us about your intended use for the domain or any other details"></textarea>
+                </div>
+                <button type="submit">Submit Offer <i class="fas fa-arrow-right"></i></button>
+            </form>
         </div>
-    </footer>
+        
+        <footer>
+            <p>© 2023 Premium Domains. All rights reserved.</p>
+            <p>Direct inquiries: nextgenstudiosglobal@gmail.com</p>
+        </footer>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- MOBILE HAMBURGER MENU ---
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            });
-
-            // --- NAVBAR DROPDOWN MENU ---
-            const dropdownButton = document.querySelector(".dropdown-button");
-            const dropdownMenu = document.querySelector(".dropdown-menu");
-            dropdownButton.addEventListener("click", (event) => {
-                event.stopPropagation();
-                dropdownMenu.classList.toggle("active");
-            });
-            document.addEventListener("click", (event) => {
-                if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
-                    dropdownMenu.classList.remove("active");
-                }
-            });
-
-            // --- FILE UPLOAD INTERACTIVITY ---
-            const fileInput = document.getElementById('file-input');
-            const fileNameDisplay = document.getElementById('file-name');
-            const toolPlaceholder = document.querySelector('.tool-placeholder');
-
-            fileInput.addEventListener('change', () => {
-                if (fileInput.files.length > 0) {
-                    fileNameDisplay.textContent = `Selected: ${fileInput.files[0].name}`;
-                } else {
-                    fileNameDisplay.textContent = '';
-                }
-            });
+        // Countdown Timer
+        function updateTimer() {
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 7); // Set to 7 days from now
             
-            ['dragenter', 'dragover'].forEach(eventName => {
-                toolPlaceholder.addEventListener(eventName, (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toolPlaceholder.classList.add('dragover');
-                }, false);
-            });
-            ['dragleave', 'drop'].forEach(eventName => {
-                toolPlaceholder.addEventListener(eventName, (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toolPlaceholder.classList.remove('dragover');
-                }, false);
-            });
-            toolPlaceholder.addEventListener('drop', (e) => {
-                fileInput.files = e.dataTransfer.files;
-                const changeEvent = new Event('change');
-                fileInput.dispatchEvent(changeEvent);
-            });
-
-            // --- FAQ ACCORDION ---
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    const currentlyActive = document.querySelector('.faq-item.active');
-                    if (currentlyActive && currentlyActive !== item) {
-                        currentlyActive.classList.remove('active');
-                    }
-                    item.classList.toggle('active');
-                });
-            });
-
-            // --- SCROLL FADE-IN ANIMATION ---
-            const fadeInElements = document.querySelectorAll('.fade-in');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            fadeInElements.forEach(el => {
-                observer.observe(el);
-            });
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("days").innerText = "00";
+                    document.getElementById("hours").innerText = "00";
+                    document.getElementById("minutes").innerText = "00";
+                    document.getElementById("seconds").innerText = "00";
+                }
+            }, 1000);
+        }
+        
+        // Form Submission
+        document.getElementById("domainOfferForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const offer = document.getElementById("offer").value;
+            const message = document.getElementById("message").value;
+            
+            const subject = "Domain Offer: YOURDOMAIN.COM";
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AOffer: $${offer}%0D%0AMessage: ${message}`;
+            
+            window.location.href = `mailto:nextgenstudiosglobal@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show confirmation message
+            alert("Thank you for your offer! You are now being redirected to email to complete your submission.");
         });
+        
+        // Initialize timer when page loads
+        window.onload = function() {
+            updateTimer();
+        };
     </script>
-    <script src="converter-extra.js" defer></script>
 </body>
 </html>
